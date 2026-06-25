@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       const url = card.getAttribute('data-url');
       if (url) {
-        window.open(url, '_blank');
+        window.location.href = url;
       }
     });
   });
