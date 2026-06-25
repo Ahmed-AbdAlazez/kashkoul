@@ -4,7 +4,7 @@
   "description": "Showcase website for Kashkoul Notebook Box",
   "main": "index.html",
   "scripts": {
-    "start": "http-server -p 8080 -c-1"
+    "start": "http-server -p $PORT -c-1"
   },
   "dependencies": {
     "http-server": "^14.1.1"
