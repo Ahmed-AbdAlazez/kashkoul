@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل بوكس المراكم | كشكول</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .details-container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .back-btn-wrapper {
+      margin-bottom: 2rem;
+    }
+    .details-header-card {
+      padding: 3rem 2rem;
+      background-color: var(--white);
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .details-title {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .details-price {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    .products-mix-title {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+      text-align: center;
+      background-color: var(--accent);
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      border: 3px solid var(--dark);
+      border-radius: 12px;
+      box-shadow: var(--neo-shadow-sm);
+    }
+    .mix-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+    @media (max-width: 768px) {
+      .mix-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .mix-card {
+      background-color: var(--white);
+      padding: 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .mix-card .empty-circle-placeholder {
+      margin-bottom: 1rem;
+    }
+    .mix-name {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+    .mix-desc {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <div class="logo-badge">كشكول</div>
+      </a>
+      <div class="back-btn-wrapper">
+        <a href="index.html" class="neo-btn" style="font-size: 0.95rem; padding: 0.5rem 1.25rem; background-color: var(--secondary);">
+          <span>← العودة للرئيسية</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="details-container">
+    
+    <!-- Header Card -->
+    <div class="details-header-card neo-box tilt-right">
+      <div class="sticker-badge" style="background-color: var(--yellow); margin-bottom: 1rem;">⏳ بوكس المراكم</div>
+      <h1 class="details-title">محتويات بوكس المراكم بالتفصيل</h1>
+      <div class="details-price">السعر: 600 جنيه مصري</div>
+      <p style="font-size: 1.2rem; font-weight: 700; max-width: 600px; margin: 0 auto 2rem auto; color: var(--dark);">
+        البوكس الاقتصادي الأنسب للبداية السريعة واللحاق بما فاتك! جمعنالك فيه الأساسيات عشان تذاكر بتركيز وبدون تشتيت وبأقل تكلفة.
+      </p>
+      
+      <a href="https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D9%85%D8%B1%D8%A7%D9%83%D9%85%20%D8%A8%D9%80%20600%20%D8%AC%D9%86%D9%8A%D9%87" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+        <span>اطلب بوكس المراكم دلوقتي</span>
+      </a>
+    </div>
+
+    <!-- Product Mix Section -->
+    <div style="text-align: center;">
+      <h2 class="products-mix-title">مكونات الصندوق بالتفصيل 📦</h2>
+    </div>
+    
+    <div class="mix-grid">
+      
+      <!-- Item 1 -->
+      <div class="mix-card neo-box">
+        <div class="empty-circle-placeholder" style="background-color: var(--primary-light);">
+          <div class="circle-icon">📚</div>
+          <div class="circle-label">4 كشاكيل سلك</div>
+        </div>
+        <h3 class="mix-name">كشاكيل المواد الأساسية</h3>
+        <p class="mix-desc">4 كشاكيل سلك فاخرة مقاس A4 بجلد مقوى ورسومات عصرية لتلخيص وتدوين الملاحظات للمواد الكبيرة مثل اللغة العربية واللغات الأجنبية.</p>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="mix-card neo-box">
+        <div class="empty-circle-placeholder" style="background-color: var(--yellow);">
+          <div class="circle-icon">✏️</div>
+          <div class="circle-label">2 أقلام جاف</div>
+        </div>
+        <h3 class="mix-name">أقلام كتابة أساسية</h3>
+        <p class="mix-desc">أقلام جاف فاخرة تدوم طويلاً، مريحة لليد أثناء الكتابة السريعة والمستمرة في الامتحانات والدروس.</p>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="mix-card neo-box">
+        <div class="empty-circle-placeholder" style="background-color: var(--accent);">
+          <div class="circle-icon">🖌️</div>
+          <div class="circle-label">1 هايلايتر</div>
+        </div>
+        <h3 class="mix-name">قلم تحديد ألوان</h3>
+        <p class="mix-desc">قلم تحديد بلون أصفر فسفوري زاهٍ، مثالي لتظليل النقاط والتعريفات الهامة في المذكرات والكتب الدراسية.</p>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="mix-card neo-box">
+        <div class="empty-circle-placeholder" style="background-color: var(--white); background-image: radial-gradient(var(--dark) 1.5px, transparent 1.5px); background-size: 15px 15px;">
+          <div class="circle-icon">🗒️</div>
+          <div class="circle-label">نوت بوك المهام</div>
+        </div>
+        <h3 class="mix-name">نوت المهام اليومية</h3>
+        <p class="mix-desc">مفكرة صغيرة سهلة الحمل لتسجيل جدول الدروس اليومية وتدوين الواجبات المنزلية والمهام المتراكمة لإنجازها أولاً بأول.</p>
+      </div>
+      
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        بوكس <span>كشكول</span> © 2026
+      </div>
+      <div class="footer-copy">
+        صُنع بحب لأجل طلاب الثانوية العامة بمصر 🇪🇬
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

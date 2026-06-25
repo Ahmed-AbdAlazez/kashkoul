@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل بوكس المجتهد | كشكول</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .details-container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .back-btn-wrapper {
+      margin-bottom: 2rem;
+    }
+    .details-header-card {
+      padding: 3rem 2rem;
+      background-color: var(--white);
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .details-title {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .details-price {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    .products-mix-title {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 2rem;
+      text-align: center;
+      background-color: var(--yellow);
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      border: 3px solid var(--dark);
+      border-radius: 12px;
+      box-shadow: var(--neo-shadow-sm);
+    }
+    .mix-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+    @media (max-width: 768px) {
+      .mix-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .mix-card {
+      background-color: var(--white);
+      padding: 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .mix-card .empty-circle-placeholder {
+      margin-bottom: 1rem;
+    }
+    .mix-name {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+    .mix-desc {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <div class="logo-badge">كشكول</div>
+      </a>
+      <div class="back-btn-wrapper">
+        <a href="index.html" class="neo-btn" style="font-size: 0.95rem; padding: 0.5rem 1.25rem; background-color: var(--secondary);">
+          <span>← العودة للرئيسية</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="details-container">
+    
+    <!-- Header Card -->
+    <div class="details-header-card neo-box tilt-left" style="background-color: #FFFEE5;">
+      <div class="sticker-badge" style="background-color: var(--primary); color: var(--white); margin-bottom: 1rem;">🔥 بوكس المجتهد - الأكثر مبيعاً</div>
+      <h1 class="details-title">محتويات بوكس المجتهد بالتفصيل</h1>
+      <div class="details-price">السعر: 800 جنيه مصري</div>
+      <p style="font-size: 1.2rem; font-weight: 700; max-width: 600px; margin: 0 auto 2rem auto; color: var(--dark);">
+        البوكس الذهبي والأكثر مبيعاً للطلبة المجتهدين! بيوفرلك كل احتياجاتك للمواد الأساسية والفرعية مع أدوات تخطيط أسبوعية مذهلة تخليك دايمًا متفوق.
+      </p>
+      
+      <a href="https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%87%D8%AF%20%D8%A8%D9%80%20800%20%D8%AC%D9%86%D9%8A%D9%87" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+        <span>اطلب بوكس المجتهد دلوقتي</span>
+      </a>
+    </div>
+
+    <!-- Product Mix Section -->
+    <div style="text-align: center;">
+      <h2 class="products-mix-title">مكونات الصندوق بالتفصيل 📦</h2>
+    </div>
+    
+    <div class="mix-grid">
+      
+      <!-- Item 1 -->
+      <div class="mix-card neo-box">
+        <div class="empty-circle-placeholder" style="background-color: var(--primary-light);">
+          <div class="circle-icon">📚</div>
+          <div class="circle-label">6 كشاكيل سلك</div>
+        </div>
+        <h3 class="mix-name">كشاكيل سلك لكل المواد</h3>
+        <p class="mix-desc">6 كشاكيل سلك مقاس A4 عالية الجودة بعدد ورقات مثالي لتغطية المناهج والملاحظات للمواد الأساسية والفرعية مع تصاميم غلاف تلهمك للمذاكرة.</p>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="mix-card neo-box">
+        <div class="empty-circle-placeholder" style="background-color: var(--yellow);">
+          <div class="circle-icon">✏️</div>
+          <div class="circle-label">3 أقلام كتابة</div>
+        </div>
+        <h3 class="mix-name">أقلام جاف ناعمة</h3>
+        <p class="mix-desc">3 أقلام جاف بألوان أساسية (أزرق، أسود، أحمر) تمتاز بحبر ناعم وسريع الجفاف لتدوين سريع ومنظم خلف المدرسين.</p>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="mix-card neo-box">
+        <div class="empty-circle-placeholder" style="background-color: var(--accent);">
+          <div class="circle-icon">🖌️</div>
+          <div class="circle-label">2 هايلايترز</div>
+        </div>
+        <h3 class="mix-name">أقلام تحديد ملونة</h3>
+        <p class="mix-desc">قلمان تحديد هايلايتر بألوان مبهجة ومريحة للعين، لتصنيف وتلوين العناوين والنصوص لتسهيل مراجعتها لاحقاً.</p>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="mix-card neo-box">
+        <div class="empty-circle-placeholder" style="background-color: var(--white); background-image: radial-gradient(var(--dark) 1.5px, transparent 1.5px); background-size: 15px 15px;">
+          <div class="circle-icon">🗒️</div>
+          <div class="circle-label">Sticky Notes</div>
+        </div>
+        <h3 class="mix-name">أوراق ملاحظات لاصقة</h3>
+        <p class="mix-desc">بلوك ملاحظات لاصق بألوان نيون زاهية لكتابة التنبيهات وإلصاقها على الكتب والمكتب لتذكيرك الدائم بالمعلومات الهامة.</p>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="mix-card neo-box" style="grid-column: span 2;">
+        <div class="empty-circle-placeholder" style="background-color: var(--secondary); color: var(--white);">
+          <div class="circle-icon">📆</div>
+          <div class="circle-label">مخطط أسبوعي</div>
+        </div>
+        <h3 class="mix-name">Weekly Planner</h3>
+        <p class="mix-desc">مخطط أسبوعي ورقي بتصميم Neobrutalist جذاب، يساعدك على تقسيم ساعات المذاكرة طوال الأسبوع ومتابعة تقدمك والتزامك بالحصص والدروس أولاً بأول.</p>
+      </div>
+      
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        بوكس <span>كشكول</span> © 2026
+      </div>
+      <div class="footer-copy">
+        صُنع بحب لأجل طلاب الثانوية العامة بمصر 🇪🇬
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
