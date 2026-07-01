@@ -189,7 +189,13 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const label = document.createElement('div');
             label.className = 'modal-page-label';
-            label.textContent = idx === 0 ? 'الغلاف' : `صفحة ${idx}`;
+            let labelText = '';
+            if (idx === 0 || idx === 1) {
+              labelText = 'الغلاف';
+            } else {
+              labelText = `صفحة ${idx - 1}`;
+            }
+            label.textContent = labelText;
             
             wrapper.appendChild(img);
             wrapper.appendChild(label);
