@@ -41,11 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
     revealOnScroll.observe(element);
   });
 
-  // --- 3. Playful Interactive Tilt Effect for Gallery/Pricing Cards ---
-  const interactiveCards = document.querySelectorAll('.pricing-card');
+  // --- 3. Playful Interactive Tilt Effect for Gallery/Pricing/Product Cards ---
+  const interactiveCards = document.querySelectorAll('.pricing-card, .product-card');
   
   interactiveCards.forEach(card => {
-    const placeholder = card.querySelector('.empty-circle-placeholder, .empty-square-placeholder');
+    const placeholder = card.querySelector('.empty-circle-placeholder, .empty-square-placeholder, .product-img-wrapper');
+    
+    if (!placeholder) return;
     
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
@@ -70,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     card.addEventListener('click', (e) => {
-      // If clicked element or parent is a link (WhatsApp order button), do not open details page
-      if (e.target.closest('a')) {
+      // If clicked element or parent is a button or link, do not open details page
+      if (e.target.closest('a') || e.target.closest('button')) {
         return;
       }
       const url = card.getAttribute('data-url');
