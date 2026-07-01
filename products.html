@@ -51,7 +51,7 @@
     <div class="products-grid">
       
       <!-- Product 1: اللغة العربية -->
-      <div class="product-card reveal">
+      <div class="product-card reveal" data-subject="arabic" style="cursor: pointer;">
         <div class="product-img-wrapper">
           <img src="images/arabic_0.png" alt="كشكول اللغة العربية" class="product-img">
         </div>
@@ -63,7 +63,7 @@
       </div>
 
       <!-- Product 2: اللغة الإنجليزية -->
-      <div class="product-card reveal" style="transition-delay: 0.05s;">
+      <div class="product-card reveal" data-subject="english" style="transition-delay: 0.05s; cursor: pointer;">
         <div class="product-img-wrapper">
           <img src="images/english_0.png" alt="كشكول اللغة الإنجليزية" class="product-img">
         </div>
@@ -75,7 +75,7 @@
       </div>
 
       <!-- Product 3: الفيزياء -->
-      <div class="product-card reveal" style="transition-delay: 0.1s;">
+      <div class="product-card reveal" data-subject="physics" style="transition-delay: 0.1s; cursor: pointer;">
         <div class="product-img-wrapper">
           <img src="images/physics_0.png" alt="كشكول الفيزياء" class="product-img">
         </div>
@@ -87,7 +87,7 @@
       </div>
 
       <!-- Product 4: الكيمياء -->
-      <div class="product-card reveal" style="transition-delay: 0.15s;">
+      <div class="product-card reveal" data-subject="chemistry" style="transition-delay: 0.15s; cursor: pointer;">
         <div class="product-img-wrapper">
           <img src="images/chemistry_0.png" alt="كشكول الكيمياء" class="product-img">
         </div>
@@ -99,7 +99,7 @@
       </div>
 
       <!-- Product 5: الأحياء -->
-      <div class="product-card reveal" style="transition-delay: 0.2s;">
+      <div class="product-card reveal" data-subject="biology" style="transition-delay: 0.2s; cursor: pointer;">
         <div class="product-img-wrapper">
           <img src="images/biology_0.png" alt="كشكول الأحياء" class="product-img">
         </div>
@@ -111,7 +111,7 @@
       </div>
 
       <!-- Product 6: الرياضيات -->
-      <div class="product-card reveal" style="transition-delay: 0.25s;">
+      <div class="product-card reveal" data-subject="math" style="transition-delay: 0.25s; cursor: pointer;">
         <div class="product-img-wrapper">
           <img src="images/math_0.png" alt="كشكول الرياضيات" class="product-img">
         </div>
@@ -123,7 +123,7 @@
       </div>
 
       <!-- Product 7: تصميم مخصص (بدون صورة) -->
-      <div class="product-card reveal" style="transition-delay: 0.3s;">
+      <div class="product-card reveal" data-subject="custom" style="transition-delay: 0.3s; cursor: pointer;">
         <div class="product-img-wrapper">
           <div class="product-placeholder-img">
             <span style="font-size: 3.5rem;">🎨✨</span>
@@ -141,6 +141,24 @@
     </div>
 
   </main>
+
+  <!-- Lightbox Modal Preview -->
+  <div id="preview-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-window neo-box">
+      <div class="modal-header">
+        <h2 id="modal-subject-title">معاينة الكشكول الدراسية</h2>
+        <button id="modal-close-btn" class="modal-close-btn">✖</button>
+      </div>
+      <div class="modal-body" id="modal-gallery-body">
+        <!-- Images or instructions will be dynamically loaded here -->
+      </div>
+      <div class="modal-footer">
+        <a id="modal-order-btn" href="#" target="_blank" rel="noopener noreferrer" class="neo-btn" style="width: 100%;">
+          <span>اطلب هذا الكشكول الآن via WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <div class="container footer-container">
