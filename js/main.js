@@ -154,20 +154,20 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
   };
 
+  const allNotebooks = [
+    { subject: 'arabic', name: 'كشكول اللغة العربية', cover: 'images/arabic_0.png' },
+    { subject: 'english', name: 'كشكول اللغة الإنجليزية', cover: 'images/english_0.png' },
+    { subject: 'physics', name: 'كشكول الفيزياء', cover: 'images/physics_0.png' },
+    { subject: 'chemistry', name: 'كشكول الكيمياء', cover: 'images/chemistry_0.png' },
+    { subject: 'biology', name: 'كشكول الأحياء', cover: 'images/biology_0.png' },
+    { subject: 'math', name: 'كشكول الرياضيات', cover: 'images/math_0.png' },
+    { subject: 'history', name: 'كشكول التاريخ', cover: 'h1.png' },
+    { subject: 'programming', name: 'كشكول البرمجة', cover: 'p1.png' }
+  ];
+
   const boxNotebooks = {
-    thanawya: [
-      { subject: 'arabic', name: 'كشكول اللغة العربية', cover: 'images/arabic_0.png' },
-      { subject: 'english', name: 'كشكول اللغة الإنجليزية', cover: 'images/english_0.png' },
-      { subject: 'physics', name: 'كشكول الفيزياء', cover: 'images/physics_0.png' },
-      { subject: 'chemistry', name: 'كشكول الكيمياء', cover: 'images/chemistry_0.png' },
-      { subject: 'biology', name: 'كشكول الأحياء', cover: 'images/biology_0.png' }
-    ],
-    baccalaureate: [
-      { subject: 'arabic', name: 'كشكول اللغة العربية', cover: 'images/arabic_0.png' },
-      { subject: 'english', name: 'كشكول اللغة الإنجليزية', cover: 'images/english_0.png' },
-      { subject: 'physics', name: 'كشكول الفيزياء', cover: 'images/physics_0.png' },
-      { subject: 'chemistry', name: 'كشكول الكيمياء', cover: 'images/chemistry_0.png' }
-    ]
+    thanawya: allNotebooks,
+    baccalaureate: allNotebooks
   };
 
   const previewModal = document.getElementById('preview-modal');
