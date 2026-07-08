@@ -1272,11 +1272,11 @@ body.modal-open {
 }
 
 /* Advice & Meme Card Custom Styles */
-.advice-meme-card {
+.advice-meme-card, .quran-card {
   transition: var(--transition);
 }
 
-.advice-meme-card:hover {
+.advice-meme-card:hover, .quran-card:hover {
   transform: rotate(0deg) scale(1.03) !important;
   box-shadow: var(--neo-shadow-lg) !important;
 }
