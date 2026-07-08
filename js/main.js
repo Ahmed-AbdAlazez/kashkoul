@@ -135,6 +135,38 @@ document.addEventListener('DOMContentLoaded', () => {
       'images/physics_4.png',
       'images/physics_5.png',
       'images/physics_6.png'
+    ],
+    history: [
+      'h1.png',
+      'h2.png',
+      'h3.jpeg',
+      'h4.png',
+      'h5.png',
+      'h6.png'
+    ],
+    programming: [
+      'p1.png',
+      'p2.png',
+      'p3.jpeg',
+      'p4.png',
+      'p5.png',
+      'p6.png'
+    ]
+  };
+
+  const boxNotebooks = {
+    thanawya: [
+      { subject: 'arabic', name: 'كشكول اللغة العربية', cover: 'images/arabic_0.png' },
+      { subject: 'english', name: 'كشكول اللغة الإنجليزية', cover: 'images/english_0.png' },
+      { subject: 'physics', name: 'كشكول الفيزياء', cover: 'images/physics_0.png' },
+      { subject: 'chemistry', name: 'كشكول الكيمياء', cover: 'images/chemistry_0.png' },
+      { subject: 'biology', name: 'كشكول الأحياء', cover: 'images/biology_0.png' }
+    ],
+    baccalaureate: [
+      { subject: 'arabic', name: 'كشكول اللغة العربية', cover: 'images/arabic_0.png' },
+      { subject: 'english', name: 'كشكول اللغة الإنجليزية', cover: 'images/english_0.png' },
+      { subject: 'physics', name: 'كشكول الفيزياء', cover: 'images/physics_0.png' },
+      { subject: 'chemistry', name: 'كشكول الكيمياء', cover: 'images/chemistry_0.png' }
     ]
   };
 
@@ -145,14 +177,134 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCloseBtn = document.getElementById('modal-close-btn');
 
   if (previewModal) {
-    // Show modal function
+    // Show box preview containing all notebook covers
+    const showBoxPreview = (boxType) => {
+      const boxName = boxType === 'thanawya' ? 'بوكس الثانوية العامة' : 'بوكس الباكالوريا';
+      modalTitle.textContent = `مكونات ${boxName}`;
+      
+      const orderUrls = {
+        thanawya: 'https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%88%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9%20%D8%A8%D9%80%20625%20%D8%AC%D9%86%D9%8E%D9%8A%D9%87',
+        baccalaureate: 'https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D8%A8%D8%A7%D9%83%D8%A7%D9%84%D9%88%D8%B1%D9%8A%D8%A7%20%D8%A8%D9%80%20500%20%D8%AC%D9%86%D9%8A%D9%87'
+      };
+      modalOrderBtn.setAttribute('href', orderUrls[boxType]);
+      modalGalleryBody.innerHTML = '';
+      
+      const notebooks = boxNotebooks[boxType] || [];
+      const boxGrid = document.createElement('div');
+      boxGrid.className = 'modal-gallery';
+      
+      notebooks.forEach(notebook => {
+        const card = document.createElement('div');
+        card.className = 'modal-gallery-img-wrapper';
+        card.style.cursor = 'pointer';
+        
+        const img = document.createElement('img');
+        img.className = 'modal-gallery-img';
+        img.src = notebook.cover;
+        img.alt = notebook.name;
+        
+        const label = document.createElement('div');
+        label.className = 'modal-page-label';
+        label.textContent = notebook.name;
+        label.style.width = 'calc(100% - 20px)';
+        label.style.textAlign = 'center';
+        label.style.fontSize = '0.85rem';
+        label.style.fontWeight = '800';
+        
+        card.appendChild(img);
+        card.appendChild(label);
+        
+        card.addEventListener('click', () => {
+          showNotebookFromBox(notebook.subject, notebook.name, boxType);
+        });
+        
+        boxGrid.appendChild(card);
+      });
+      
+      modalGalleryBody.appendChild(boxGrid);
+      previewModal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+    };
+
+    // Show single notebook from box view with back button
+    const showNotebookFromBox = (subject, name, boxType) => {
+      modalTitle.textContent = `معاينة ${name}`;
+      modalGalleryBody.innerHTML = '';
+      
+      const backBtnWrapper = document.createElement('div');
+      backBtnWrapper.style.marginBottom = '1.5rem';
+      backBtnWrapper.style.textAlign = 'right';
+      
+      const backBtn = document.createElement('button');
+      backBtn.className = 'neo-btn';
+      backBtn.style.padding = '0.4rem 1.25rem';
+      backBtn.style.fontSize = '0.9rem';
+      backBtn.style.backgroundColor = 'var(--secondary)';
+      backBtn.innerHTML = `<span>← العودة لبوكس الكشاكيل</span>`;
+      backBtn.addEventListener('click', () => {
+        showBoxPreview(boxType);
+      });
+      
+      backBtnWrapper.appendChild(backBtn);
+      modalGalleryBody.appendChild(backBtnWrapper);
+      
+      const images = subjectImages[subject] || [];
+      if (images.length === 0) {
+        const msg = document.createElement('p');
+        msg.style.textAlign = 'center';
+        msg.style.fontWeight = '800';
+        msg.style.padding = '2rem';
+        msg.textContent = 'لا توجد صور معاينة متاحة حالياً.';
+        modalGalleryBody.appendChild(msg);
+      } else {
+        const galleryGrid = document.createElement('div');
+        galleryGrid.className = 'modal-gallery';
+        
+        images.forEach((imgUrl, idx) => {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'modal-gallery-img-wrapper';
+          
+          const img = document.createElement('img');
+          img.className = 'modal-gallery-img';
+          img.src = imgUrl;
+          img.alt = `${name} - صفحة ${idx}`;
+          img.loading = 'lazy';
+          
+          const label = document.createElement('div');
+          label.className = 'modal-page-label';
+          
+          let labelText = '';
+          if (subject === 'history' || subject === 'programming') {
+            if (idx === 0 || idx === 1) {
+              labelText = 'الغلاف';
+            } else {
+              labelText = `ورقة ${idx - 1}`;
+            }
+          } else {
+            if (idx === 0 || idx === 1) {
+              labelText = 'الغلاف';
+            } else {
+              labelText = `صفحة ${idx - 1}`;
+            }
+          }
+          label.textContent = labelText;
+          
+          wrapper.appendChild(img);
+          wrapper.appendChild(label);
+          galleryGrid.appendChild(wrapper);
+        });
+        
+        modalGalleryBody.appendChild(galleryGrid);
+      }
+    };
+
+    // Show standard preview function
     const showPreview = (subject, name, orderUrl) => {
       modalTitle.textContent = `معاينة ${name}`;
       modalOrderBtn.setAttribute('href', orderUrl);
       modalGalleryBody.innerHTML = '';
       
       if (subject === 'custom') {
-        // Render custom design explanation
         modalGalleryBody.innerHTML = `
           <div style="text-align: center; padding: 2rem 1.5rem; background-color: var(--white); border: var(--border-width) solid var(--dark); border-radius: 16px; box-shadow: var(--neo-shadow-sm); max-width: 500px; margin: 0 auto;">
             <div style="font-size: 4.5rem; margin-bottom: 1.5rem;">🎨✨</div>
@@ -173,7 +325,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (images.length === 0) {
           modalGalleryBody.innerHTML = '<p style="text-align: center; font-weight: 800; padding: 2rem;">لا توجد صور معاينة متاحة حالياً.</p>';
         } else {
-          // Render images grid
           const galleryGrid = document.createElement('div');
           galleryGrid.className = 'modal-gallery';
           
@@ -190,10 +341,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const label = document.createElement('div');
             label.className = 'modal-page-label';
             let labelText = '';
-            if (idx === 0 || idx === 1) {
-              labelText = 'الغلاف';
+            if (subject === 'history' || subject === 'programming') {
+              if (idx === 0 || idx === 1) {
+                labelText = 'الغلاف';
+              } else {
+                labelText = `ورقة ${idx - 1}`;
+              }
             } else {
-              labelText = `صفحة ${idx - 1}`;
+              if (idx === 0 || idx === 1) {
+                labelText = 'الغلاف';
+              } else {
+                labelText = `صفحة ${idx - 1}`;
+              }
             }
             label.textContent = labelText;
             
@@ -220,7 +379,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const productCards = document.querySelectorAll('.product-card');
     productCards.forEach(card => {
       card.addEventListener('click', (e) => {
-        // Exclude order button clicks
         if (e.target.closest('a') || e.target.closest('button')) {
           return;
         }
@@ -230,6 +388,18 @@ document.addEventListener('DOMContentLoaded', () => {
           const name = card.querySelector('.product-name').textContent;
           const orderUrl = card.querySelector('a').getAttribute('href');
           showPreview(subject, name, orderUrl);
+        }
+      });
+    });
+
+    // Attach click events to package preview buttons
+    const previewBoxBtns = document.querySelectorAll('.preview-box-btn');
+    previewBoxBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent card redirection
+        const boxType = btn.getAttribute('data-box-type');
+        if (boxType) {
+          showBoxPreview(boxType);
         }
       });
     });

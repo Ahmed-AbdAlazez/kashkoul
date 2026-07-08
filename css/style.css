@@ -1257,5 +1257,37 @@ body.modal-open {
   overflow: hidden;
 }
 
+/* Centered Hero Layout Modifier */
+.hero-grid-centered {
+  grid-template-columns: 1fr;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.hero-content-centered {
+  align-items: center;
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* Advice & Meme Card Custom Styles */
+.advice-meme-card {
+  transition: var(--transition);
+}
+
+.advice-meme-card:hover {
+  transform: rotate(0deg) scale(1.03) !important;
+  box-shadow: var(--neo-shadow-lg) !important;
+}
+
+/* 2-column Pricing Grid Layout Modifier */
+.pricing-grid-2col {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 
 
