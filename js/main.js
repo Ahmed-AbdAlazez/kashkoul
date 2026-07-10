@@ -151,6 +151,31 @@ document.addEventListener('DOMContentLoaded', () => {
       'p4.png',
       'p5.png',
       'p6.png'
+    ],
+    todo_list: [
+      'supplies/غلاف التودوليست.png',
+      'supplies/ورقة التودوليست.png'
+    ],
+    evaluation_book: [
+      'supplies/tips غلاف.png',
+      'supplies/tips نصيحة.png',
+      'supplies/tips ورقتين جنب بعض.png',
+      'supplies/tips. تقييم.png'
+    ],
+    glitter_highlighter: [
+      'supplies/ماركر جليتر.png'
+    ],
+    mechanical_pencil: [
+      'supplies/قلم رصاص سنون.png'
+    ],
+    sticky_notes: [
+      'supplies/ستيكي نوت.png'
+    ],
+    bookmarks: [
+      'supplies/فواصل.png'
+    ],
+    stickers: [
+      'supplies/ستيكر.png'
     ]
   };
 
@@ -341,7 +366,25 @@ document.addEventListener('DOMContentLoaded', () => {
             const label = document.createElement('div');
             label.className = 'modal-page-label';
             let labelText = '';
-            if (subject === 'history' || subject === 'programming') {
+            if (subject === 'todo_list') {
+              if (idx === 0) labelText = 'الغلاف';
+              else labelText = 'صفحة المهام';
+            } else if (subject === 'evaluation_book') {
+              if (idx === 0) labelText = 'الغلاف';
+              else if (idx === 1) labelText = 'نصيحة أسبوعية';
+              else if (idx === 2) labelText = 'صفحتين متقابلتين';
+              else labelText = 'تقييم الأسبوع';
+            } else if (subject === 'glitter_highlighter') {
+              labelText = 'هايلايتر جليتر';
+            } else if (subject === 'mechanical_pencil') {
+              labelText = 'قلم رصاص سنون';
+            } else if (subject === 'sticky_notes') {
+              labelText = 'ستيكي نوت';
+            } else if (subject === 'bookmarks') {
+              labelText = 'فواصل كتب';
+            } else if (subject === 'stickers') {
+              labelText = 'ستيكرات';
+            } else if (subject === 'history' || subject === 'programming') {
               if (idx === 0 || idx === 1) {
                 labelText = 'الغلاف';
               } else {
