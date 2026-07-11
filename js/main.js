@@ -176,6 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
     ],
     stickers: [
       'supplies/ستيكر.png'
+    ],
+    full_box: [
+      'supplies/كله.png'
     ]
   };
 
@@ -366,7 +369,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const label = document.createElement('div');
             label.className = 'modal-page-label';
             let labelText = '';
-            if (subject === 'todo_list') {
+            if (subject === 'full_box') {
+              labelText = 'بوكس المستلزمات الكامل';
+            } else if (subject === 'todo_list') {
               if (idx === 0) labelText = 'الغلاف';
               else labelText = 'صفحة المهام';
             } else if (subject === 'evaluation_book') {

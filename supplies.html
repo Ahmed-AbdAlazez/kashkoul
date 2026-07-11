@@ -182,20 +182,31 @@
 
   <main class="details-container">
     
-    <!-- Header Card -->
-    <div class="details-header-card neo-box tilt-right">
-      <div class="sticker-badge" style="background-color: var(--primary-light); color: var(--dark); margin-bottom: 1rem;">✨ بوكس المستلزمات والأدوات</div>
-      <h1 class="details-title">محتويات بوكس المستلزمات بالتفصيل</h1>
-      <div class="details-price">
-        <span>السعر: 225 جنيه مصري</span>
+    <!-- Header Card Grid -->
+    <div class="details-header-card-grid">
+      <!-- Right Side: Details info -->
+      <div class="details-header-info">
+        <div class="sticker-badge" style="background-color: var(--primary-light); color: var(--dark); margin-bottom: 0.5rem;">✨ بوكس المستلزمات والأدوات</div>
+        <h1 class="details-title">محتويات بوكس المستلزمات بالتفصيل</h1>
+        <div class="details-price">
+          <span>السعر: 225 جنيه مصري</span>
+        </div>
+        <p style="font-size: 1.15rem; font-weight: 700; max-width: 600px; margin-bottom: 1.5rem; color: var(--dark); line-height: 1.6;">
+          البوكس المتكامل للأدوات المكتبية والملحقات المنظمة المصممة خصيصاً لمساعدتك على التفوق والتنظيم طوال العام الدراسي! (اضغط على أي كارت بالأسفل لمعاينة الصور بالتفصيل 🔍)
+        </p>
+        
+        <a href="https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%84%D8%B2%D9%85%D8%A7%D8%AA%20%D8%A8%D9%80%20225%20%D8%AC%D9%86%D9%8E%D9%8A%D9%87" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+          <span>اطلب بوكس المستلزمات دلوقتي</span>
+        </a>
       </div>
-      <p style="font-size: 1.2rem; font-weight: 700; max-width: 600px; margin: 0 auto 2rem auto; color: var(--dark);">
-        البوكس المتكامل للأدوات المكتبية والملحقات المنظمة المصممة خصيصاً لمساعدتك على التفوق والتنظيم طوال العام الدراسي!
-      </p>
-      
-      <a href="https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%84%D8%B2%D9%85%D8%A7%D8%AA%20%D8%A8%D9%80%20225%20%D8%AC%D9%86%D9%8E%D9%8A%D9%87" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-        <span>اطلب بوكس المستلزمات دلوقتي</span>
-      </a>
+
+      <!-- Left Side: Featured image wrapper (acts as a product-card too) -->
+      <div class="featured-image-wrapper product-card" data-subject="full_box" style="cursor: pointer;">
+        <img src="supplies/كله.png" class="featured-image" alt="بوكس المستلزمات والأدوات الكامل">
+        <!-- Hidden link to avoid error in js product card mapping -->
+        <a href="https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%84%D8%B2%D9%85%D8%A7%D8%AA%20%D8%A8%D9%80%20225%20%D8%AC%D9%86%D9%8E%D9%8A%D9%87" style="display: none;"></a>
+        <div class="product-name" style="display: none;">بوكس المستلزمات والأدوات الكامل</div>
+      </div>
     </div>
 
     <!-- Product Mix Section -->
@@ -205,64 +216,74 @@
     
     <div class="mix-grid">
       
-      <!-- Item 1 -->
-      <div class="mix-card neo-box">
-        <div class="empty-circle-placeholder" style="background-color: var(--yellow);">
-          <div class="circle-icon">📝</div>
-          <div class="circle-label">تودو ليست</div>
+      <!-- Item 1: To-Do List -->
+      <div class="mix-card product-card" data-subject="todo_list">
+        <div class="mix-img-wrapper">
+          <img src="supplies/غلاف التودوليست.png" class="mix-img" alt="تودو ليست">
         </div>
-        <h3 class="mix-name">تودو ليست (To-Do List)</h3>
+        <h3 class="mix-name product-name">تودو ليست (To-Do List)</h3>
         <p class="mix-desc">مفكرة مخصصة لتدوين مهامك اليومية والأسبوعية وتنظيم جدول مذاكرتك وأهدافك لتضمن عدم نسيان أي واجب أو مراجعة.</p>
+        <a href="https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%84%D8%B2%D9%85%D8%A7%D8%AA%20%D8%A8%D9%80%20225%20%D8%AC%D9%86%D9%8E%D9%8A%D9%87" style="display: none;"></a>
       </div>
 
-      <!-- Item 2 -->
-      <div class="mix-card neo-box">
-        <div class="empty-circle-placeholder" style="background-color: var(--accent);">
-          <div class="circle-icon">🎯</div>
-          <div class="circle-label">التقييم والتحفيز</div>
+      <!-- Item 2: Evaluation & Motivation Notebook -->
+      <div class="mix-card product-card" data-subject="evaluation_book">
+        <div class="mix-img-wrapper">
+          <img src="supplies/tips غلاف.png" class="mix-img" alt="كراسة التقييم والتحفيز">
         </div>
-        <h3 class="mix-name">كراسة التقييم والتحفيز</h3>
+        <h3 class="mix-name product-name">كراسة التقييم والتحفيز</h3>
         <p class="mix-desc">كراسة فريدة من نوعها توفر لك نصائح وإرشادات لكل أسبوع من أسابيع السنة الدراسية، بالإضافة إلى قسم مخصص لتقييم أدائك بنفسك من 10.</p>
+        <a href="https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%84%D8%B2%D9%85%D8%A7%D8%AA%20%D8%A8%D9%80%20225%20%D8%AC%D9%86%D9%8E%D9%8A%D9%87" style="display: none;"></a>
       </div>
 
-      <!-- Item 3 -->
-      <div class="mix-card neo-box">
-        <div class="empty-circle-placeholder" style="background-color: var(--yellow);">
-          <div class="circle-icon">✨</div>
-          <div class="circle-label">هايلايتر جليتر</div>
+      <!-- Item 3: Glitter Highlighter -->
+      <div class="mix-card product-card" data-subject="glitter_highlighter">
+        <div class="mix-img-wrapper">
+          <img src="supplies/ماركر جليتر.png" class="mix-img" alt="هايلايتر جليتر">
         </div>
-        <h3 class="mix-name">هايلايتر جليتر</h3>
+        <h3 class="mix-name product-name">هايلايتر جليتر</h3>
         <p class="mix-desc">قلم تحديد مميز بلمعة جليتر برّاقة وجميلة لتظليل وتحديد النقاط الهامة والعناوين في ملخصاتك وتسهيل حفظها.</p>
+        <a href="https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%84%D8%B2%D9%85%D8%A7%D8%AA%20%D8%A8%D9%80%20225%20%D8%AC%D9%86%D9%8E%D9%8A%D9%87" style="display: none;"></a>
       </div>
 
-      <!-- Item 4 -->
-      <div class="mix-card neo-box">
-        <div class="empty-circle-placeholder" style="background-color: var(--primary-light);">
-          <div class="circle-icon">✏️</div>
-          <div class="circle-label">قلم رصاص سنون</div>
+      <!-- Item 4: Mechanical Pencil -->
+      <div class="mix-card product-card" data-subject="mechanical_pencil">
+        <div class="mix-img-wrapper">
+          <img src="supplies/قلم رصاص سنون.png" class="mix-img" alt="قلم رصاص سنون">
         </div>
-        <h3 class="mix-name">قلم رصاص سنون بالسنون</h3>
+        <h3 class="mix-name product-name">قلم رصاص سنون بالسنون</h3>
         <p class="mix-desc">قلم رصاص سنون يتميز بتصميم أنيق ومريح للغاية أثناء الكتابة والرسم، ويأتي معه علبة سنون إضافية جاهزة للاستخدام.</p>
+        <a href="https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%84%D8%B2%D9%85%D8%A7%D8%AA%20%D8%A8%D9%80%20225%20%D8%AC%D9%86%D9%8E%D9%8A%D9%87" style="display: none;"></a>
       </div>
 
-      <!-- Item 5 -->
-      <div class="mix-card neo-box">
-        <div class="empty-circle-placeholder" style="background-color: var(--accent);">
-          <div class="circle-icon">🗒️</div>
-          <div class="circle-label">ستيكي نوت</div>
+      <!-- Item 5: Sticky Notes -->
+      <div class="mix-card product-card" data-subject="sticky_notes">
+        <div class="mix-img-wrapper">
+          <img src="supplies/ستيكي نوت.png" class="mix-img" alt="ستيكي نوت">
         </div>
-        <h3 class="mix-name">ستيكي نوت (Sticky Notes)</h3>
+        <h3 class="mix-name product-name">ستيكي نوت (Sticky Notes)</h3>
         <p class="mix-desc">أوراق ملاحظات لاصقة ملونة ومبهجة لتسجيل القوانين السريعة والاقتباسات التحفيزية وتثبيتها أمامك على المكتب.</p>
+        <a href="https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%84%D8%B2%D9%85%D8%A7%D8%AA%20%D8%A8%D9%80%20225%20%D8%AC%D9%86%D9%8E%D9%8A%D9%87" style="display: none;"></a>
       </div>
 
-      <!-- Item 6 -->
-      <div class="mix-card neo-box" style="grid-column: span 2; max-width: 500px; justify-self: center; width: 100%;">
-        <div class="empty-circle-placeholder" style="background-color: var(--white); background-image: radial-gradient(var(--dark) 1.5px, transparent 1.5px); background-size: 15px 15px;">
-          <div class="circle-icon">🔖</div>
-          <div class="circle-label">200 فاصل</div>
+      <!-- Item 6: Bookmarks -->
+      <div class="mix-card product-card" data-subject="bookmarks">
+        <div class="mix-img-wrapper">
+          <img src="supplies/فواصل.png" class="mix-img" alt="فواصل كتب">
         </div>
-        <h3 class="mix-name">فواصل كتب ورقية (200 فاصل)</h3>
+        <h3 class="mix-name product-name">فواصل كتب ورقية (200 فاصل)</h3>
         <p class="mix-desc">200 فاصل كتب مصمم بأشكال ورسومات مبهجة ومحفزة لمساعدتك في وضع علامات سريعة لأهم الأماكن والدروس في كتبك ومراجعك.</p>
+        <a href="https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%84%D8%B2%D9%85%D8%A7%D8%AA%20%D8%A8%D9%80%20225%20%D8%AC%D9%86%D9%8E%D9%8A%D9%87" style="display: none;"></a>
+      </div>
+
+      <!-- Item 7: Stickers -->
+      <div class="mix-card product-card" data-subject="stickers">
+        <div class="mix-img-wrapper">
+          <img src="supplies/ستيكر.png" class="mix-img" alt="ستيكرات مبهجة">
+        </div>
+        <h3 class="mix-name product-name">ستيكرات مبهجة تحفيزية</h3>
+        <p class="mix-desc">مجموعة من الستيكرات والملصقات الملونة والمصممة بعبارات تشجيعية لتزيين كشاكيلك ومكتبك وزيادة حماسك للمذاكرة.</p>
+        <a href="https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%84%D8%B2%D9%85%D8%A7%D8%AA%20%D8%A8%D9%80%20225%20%D8%AC%D9%86%D9%8E%D9%8A%D9%87" style="display: none;"></a>
       </div>
       
     </div>
