@@ -152,6 +152,41 @@ document.addEventListener('DOMContentLoaded', () => {
       'p5.png',
       'p6.png'
     ],
+    french: [
+      'images/french_0.png',
+      'images/french_1.png',
+      'images/french_2.png',
+      'images/french_3.png',
+      'images/french_4.png'
+    ],
+    psychology: [
+      'images/psychology_0.png',
+      'images/psychology_1.png',
+      'images/psychology_2.png',
+      'images/psychology_3.png',
+      'images/psychology_4.png'
+    ],
+    geography: [
+      'images/geography_0.png',
+      'images/geography_1.png',
+      'images/geography_2.png',
+      'images/geography_3.png',
+      'images/geography_4.png'
+    ],
+    statistics: [
+      'images/statistics_0.png',
+      'images/statistics_1.png',
+      'images/statistics_2.png',
+      'images/statistics_3.png',
+      'images/statistics_4.png'
+    ],
+    economics: [
+      'images/economics_0.png',
+      'images/economics_1.png',
+      'images/economics_2.png',
+      'images/economics_3.png',
+      'images/economics_4.png'
+    ],
     todo_list: [
       'supplies/غلاف التودوليست.png',
       'supplies/ورقة التودوليست.png'
@@ -190,7 +225,12 @@ document.addEventListener('DOMContentLoaded', () => {
     { subject: 'biology', name: 'كشكول الأحياء', cover: 'images/biology_0.png' },
     { subject: 'math', name: 'كشكول الرياضيات', cover: 'images/math_0.png' },
     { subject: 'history', name: 'كشكول التاريخ', cover: 'h1.png' },
-    { subject: 'programming', name: 'كشكول البرمجة', cover: 'p1.png' }
+    { subject: 'programming', name: 'كشكول البرمجة', cover: 'p1.png' },
+    { subject: 'french', name: 'كشكول الفرنساوي', cover: 'images/french_0.png' },
+    { subject: 'psychology', name: 'كشكول علم النفس', cover: 'images/psychology_0.png' },
+    { subject: 'geography', name: 'كشكول الجغرافيا', cover: 'images/geography_0.png' },
+    { subject: 'statistics', name: 'كشكول الإحصاء', cover: 'images/statistics_0.png' },
+    { subject: 'economics', name: 'كشكول الاقتصاد', cover: 'images/economics_0.png' }
   ];
 
   const boxNotebooks = {
@@ -211,8 +251,8 @@ document.addEventListener('DOMContentLoaded', () => {
       modalTitle.textContent = `مكونات ${boxName}`;
       
       const orderUrls = {
-        thanawya: 'https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%88%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9%20%D8%A8%D9%80%20625%20%D8%AC%D9%86%D9%8E%D9%8A%D9%87',
-        baccalaureate: 'https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D8%A8%D8%A7%D9%83%D8%A7%D9%84%D9%88%D8%B1%D9%8A%D8%A7%20%D8%A8%D9%80%20500%20%D8%AC%D9%86%D9%8A%D9%87'
+        thanawya: 'https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%88%D9%8A%D8%A9%20%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9%20%D8%A8%D9%80%20500%20%D8%AC%D9%86%D9%8A%D9%87',
+        baccalaureate: 'https://wa.me/201065506337?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A8%D9%88%D9%83%D8%B3%20%D8%A7%D9%84%D8%A8%D8%A7%D9%83%D8%A7%D9%84%D9%88%D8%B1%D9%8A%D8%A7%20%D8%A8%D9%80%20400%20%D8%AC%D9%86%D9%8A%D9%87'
       };
       modalOrderBtn.setAttribute('href', orderUrls[boxType]);
       modalGalleryBody.innerHTML = '';

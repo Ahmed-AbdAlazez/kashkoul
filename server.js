@@ -18,8 +18,13 @@ const MIME_TYPES = {
 };
 
 const server = http.createServer((req, res) => {
-  // Normalize path and remove query parameters
+  // Normalize path, decode URI components (for spaces/Arabic characters), and remove query parameters
   let urlPath = req.url.split('?')[0];
+  try {
+    urlPath = decodeURIComponent(urlPath);
+  } catch (e) {
+    // Fallback to original path if decoding fails
+  }
   let filePath = urlPath === '/' ? '/index.html' : urlPath;
   filePath = path.join(__dirname, filePath);
 
