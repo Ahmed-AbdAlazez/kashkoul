@@ -187,6 +187,14 @@ document.addEventListener('DOMContentLoaded', () => {
       'images/economics_3.png',
       'images/economics_4.png'
     ],
+    italian: [
+      'images/italian_0.png',
+      'images/italian_1.png',
+      'images/italian_2.png',
+      'images/italian_3.png',
+      'images/italian_4.png',
+      'images/italian_5.png'
+    ],
     todo_list: [
       'supplies/غلاف التودوليست.png',
       'supplies/ورقة التودوليست.png'
@@ -230,7 +238,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { subject: 'psychology', name: 'كشكول علم النفس', cover: 'images/psychology_0.png' },
     { subject: 'geography', name: 'كشكول الجغرافيا', cover: 'images/geography_0.png' },
     { subject: 'statistics', name: 'كشكول الإحصاء', cover: 'images/statistics_0.png' },
-    { subject: 'economics', name: 'كشكول الاقتصاد', cover: 'images/economics_0.png' }
+    { subject: 'economics', name: 'كشكول الاقتصاد', cover: 'images/economics_0.png' },
+    { subject: 'italian', name: 'كشكول اللغة الإيطالية', cover: 'images/italian_0.png' }
   ];
 
   const boxNotebooks = {
