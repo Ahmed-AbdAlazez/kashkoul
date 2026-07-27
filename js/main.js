@@ -195,6 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
       'images/italian_4.png',
       'images/italian_5.png'
     ],
+    german: [
+      'images/german_0.png',
+      'images/german_1.png',
+      'images/german_2.png',
+      'images/german_3.png',
+      'images/german_4.png',
+      'images/german_5.png'
+    ],
     todo_list: [
       'supplies/غلاف التودوليست.png',
       'supplies/ورقة التودوليست.png'
@@ -224,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'supplies/كله.png'
     ]
   };
-
+ 
   const allNotebooks = [
     { subject: 'arabic', name: 'كشكول اللغة العربية', cover: 'images/arabic_0.png' },
     { subject: 'english', name: 'كشكول اللغة الإنجليزية', cover: 'images/english_0.png' },
@@ -235,12 +243,14 @@ document.addEventListener('DOMContentLoaded', () => {
     { subject: 'history', name: 'كشكول التاريخ', cover: 'h1.png' },
     { subject: 'programming', name: 'كشكول البرمجة', cover: 'p1.png' },
     { subject: 'french', name: 'كشكول الفرنساوي', cover: 'images/french_0.png' },
+    { subject: 'italian', name: 'كشكول اللغة الإيطالية', cover: 'images/italian_0.png' },
+    { subject: 'german', name: 'كشكول اللغة الألمانية', cover: 'images/german_0.png' },
     { subject: 'psychology', name: 'كشكول علم النفس', cover: 'images/psychology_0.png' },
     { subject: 'geography', name: 'كشكول الجغرافيا', cover: 'images/geography_0.png' },
     { subject: 'statistics', name: 'كشكول الإحصاء', cover: 'images/statistics_0.png' },
-    { subject: 'economics', name: 'كشكول الاقتصاد', cover: 'images/economics_0.png' },
-    { subject: 'italian', name: 'كشكول اللغة الإيطالية', cover: 'images/italian_0.png' }
+    { subject: 'economics', name: 'كشكول الاقتصاد', cover: 'images/economics_0.png' }
   ];
+
 
   const boxNotebooks = {
     thanawya: allNotebooks,
@@ -525,4 +535,243 @@ document.addEventListener('DOMContentLoaded', () => {
     const randomRot = (Math.random() * 6 - 3).toFixed(1); // random between -3 and 3
     badge.style.transform = `rotate(${randomRot}deg)`;
   });
+
+  // --- 6. Interactive Site Tour / Onboarding ---
+  const tourSteps = [
+    {
+      element: '#guide-section',
+      title: '🧭 جولة تفاعلية في كشكول',
+      body: 'أهلاً بيك! تعال معانا في جولة سريعة عشان نعرفك إزاي تستخدم الموقع وتطلب بسهولة. اضغط التالي للبدء!'
+    },
+    {
+      element: '#packages-section',
+      title: '📦 1. اختر بوكس كشكول',
+      body: 'هنا هتلاقي باقات بوكس كشكول المتكاملة (الثانوية العامة، الباكالوريا، أو المستلزمات) بخصومات بتوصل لـ 20%! تقدر تضغط على أي باقة لمعاينة تفاصيلها.'
+    },
+    {
+      element: '.preview-box-btn', // target the first preview button
+      title: '📖 2. عاين الكشاكيل والورق',
+      body: 'اضغط على زرار "معاينة" عشان يفتحلك معرض صور تفاعلي لكل كشكول وأوراقه وتفاصيله كأنك ماسكه في إيدك بالظبط!'
+    },
+    {
+      element: '.mini-products-section',
+      title: '📝 3. كشاكيل فردية وتصميم خاص',
+      body: 'لو مش محتاج بوكس كامل، تقدر تطلب كشكول أي مادة لوحده بخصم 20%، وكمان تقدر تطلب كشكول بتصميم خاص بيك بالكامل!'
+    },
+    {
+      element: '#whatsapp-order-btn',
+      title: '💬 4. اطلب في ثانية عبر واتساب',
+      body: 'بمجرد ما تدوس على زرار الواتساب، هيفتحلك شات مباشر لتأكيد طلبك وتحديد موادك، وهيوصلك لحد باب بيتك في 48 ساعة فقط!'
+    }
+  ];
+
+  let currentTourStep = 0;
+  let activeTourElement = null;
+
+  // Create Tour DOM Elements
+  const createTourElements = () => {
+    // Backdrop
+    if (!document.getElementById('tour-backdrop')) {
+      const backdrop = document.createElement('div');
+      backdrop.id = 'tour-backdrop';
+      backdrop.className = 'tour-backdrop';
+      backdrop.addEventListener('click', endTour);
+      document.body.appendChild(backdrop);
+    }
+    
+    // Tooltip
+    if (!document.getElementById('tour-tooltip')) {
+      const tooltip = document.createElement('div');
+      tooltip.id = 'tour-tooltip';
+      tooltip.className = 'tour-tooltip';
+      tooltip.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+          <h4 id="tour-title" class="tour-tooltip-title"></h4>
+          <button id="tour-close" class="tour-btn-close" aria-label="إغلاق">✖</button>
+        </div>
+        <p id="tour-body" class="tour-tooltip-body"></p>
+        <div class="tour-tooltip-actions">
+          <button id="tour-prev" class="neo-btn neo-btn-secondary" style="padding: 0.4rem 1.15rem; font-size: 0.9rem; border: 2px solid var(--dark); box-shadow: 2px 2px 0px var(--dark);">السابق ➡️</button>
+          <div style="font-weight: 800; font-size: 0.95rem; color: var(--dark);" id="tour-progress">1 / 5</div>
+          <button id="tour-next" class="neo-btn" style="padding: 0.4rem 1.15rem; font-size: 0.9rem; border: 2px solid var(--dark); box-shadow: 2px 2px 0px var(--dark);">التالي ⬅️</button>
+        </div>
+      `;
+      document.body.appendChild(tooltip);
+
+      // Event listeners for tour buttons
+      document.getElementById('tour-close').addEventListener('click', endTour);
+      document.getElementById('tour-prev').addEventListener('click', prevStep);
+      document.getElementById('tour-next').addEventListener('click', nextStep);
+    }
+  };
+
+  const showStep = (index) => {
+    createTourElements();
+    const backdrop = document.getElementById('tour-backdrop');
+    const tooltip = document.getElementById('tour-tooltip');
+    const titleEl = document.getElementById('tour-title');
+    const bodyEl = document.getElementById('tour-body');
+    const progressEl = document.getElementById('tour-progress');
+    const nextBtn = document.getElementById('tour-next');
+    const prevBtn = document.getElementById('tour-prev');
+
+    if (activeTourElement) {
+      activeTourElement.classList.remove('tour-highlighted');
+    }
+
+    const step = tourSteps[index];
+    const targetEl = document.querySelector(step.element);
+
+    if (targetEl) {
+      activeTourElement = targetEl;
+      activeTourElement.classList.add('tour-highlighted');
+      
+      // Scroll to element
+      const headerOffset = 130;
+      const elementPosition = targetEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+
+    // Set content
+    titleEl.textContent = step.title;
+    bodyEl.textContent = step.body;
+    progressEl.textContent = `${index + 1} / ${tourSteps.length}`;
+    
+    // Disable/Enable buttons
+    if (index === 0) {
+      prevBtn.style.visibility = 'hidden';
+    } else {
+      prevBtn.style.visibility = 'visible';
+    }
+
+    if (index === tourSteps.length - 1) {
+      nextBtn.innerHTML = '<span>إنهاء الجولة 🎉</span>';
+    } else {
+      nextBtn.innerHTML = '<span>التالي ⬅️</span>';
+    }
+
+    // Show tour
+    backdrop.classList.add('active');
+    tooltip.classList.add('active');
+  };
+
+  const startTour = () => {
+    currentTourStep = 0;
+    showStep(currentTourStep);
+  };
+
+  const endTour = () => {
+    const backdrop = document.getElementById('tour-backdrop');
+    const tooltip = document.getElementById('tour-tooltip');
+    
+    if (backdrop) backdrop.classList.remove('active');
+    if (tooltip) tooltip.classList.remove('active');
+    
+    if (activeTourElement) {
+      activeTourElement.classList.remove('tour-highlighted');
+      activeTourElement = null;
+    }
+    
+    localStorage.setItem('kashkool_tour_completed', 'true');
+  };
+
+  function nextStep() {
+    if (currentTourStep < tourSteps.length - 1) {
+      currentTourStep++;
+      showStep(currentTourStep);
+    } else {
+      endTour();
+    }
+  }
+
+  function prevStep() {
+    if (currentTourStep > 0) {
+      currentTourStep--;
+      showStep(currentTourStep);
+    }
+  }
+
+  // Keyboard navigation for Tour
+  document.addEventListener('keydown', (e) => {
+    const tooltip = document.getElementById('tour-tooltip');
+    if (tooltip && tooltip.classList.contains('active')) {
+      if (e.key === 'Escape') {
+        endTour();
+      } else if (e.key === 'ArrowLeft') { // Since layout is RTL, Left Arrow goes next/forward
+        nextStep();
+      } else if (e.key === 'ArrowRight') { // Right Arrow goes back
+        prevStep();
+      }
+    }
+  });
+
+  // Onboarding cards click highlights
+  const onboardingCards = document.querySelectorAll('.onboarding-card');
+  onboardingCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const stepNum = parseInt(card.getAttribute('data-step'));
+      if (stepNum === 1) {
+        const target = document.querySelector('#packages-section');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          flashHighlight('#packages-section');
+        }
+      } else if (stepNum === 2) {
+        const target = document.querySelector('.preview-box-btn');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          flashHighlight('.preview-box-btn');
+        }
+      } else if (stepNum === 3) {
+        const target = document.querySelector('.mini-products-section');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          flashHighlight('.mini-products-section');
+        }
+      } else if (stepNum === 4) {
+        const target = document.querySelector('#order-section');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          flashHighlight('#whatsapp-order-btn');
+        }
+      }
+    });
+  });
+
+  const flashHighlight = (selector) => {
+    const el = document.querySelector(selector);
+    if (el) {
+      el.classList.add('tour-highlighted');
+      setTimeout(() => {
+        el.classList.remove('tour-highlighted');
+      }, 1500);
+    }
+  };
+
+  // Connect Buttons
+  const startTourBtn = document.getElementById('start-tour-btn');
+  if (startTourBtn) {
+    startTourBtn.addEventListener('click', startTour);
+  }
+
+  const heroTourBtn = document.getElementById('hero-tour-btn');
+  if (heroTourBtn) {
+    heroTourBtn.addEventListener('click', startTour);
+  }
+
+  // Auto start tour for first-time visitors after 1.5 seconds
+  if (!localStorage.getItem('kashkool_tour_completed')) {
+    setTimeout(() => {
+      // Only start if not already in another modal/page state
+      if (!document.body.classList.contains('modal-open')) {
+        startTour();
+      }
+    }, 1500);
+  }
 });
+

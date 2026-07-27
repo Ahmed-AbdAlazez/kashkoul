@@ -1288,6 +1288,185 @@ body.modal-open {
   margin-right: auto;
 }
 
+/* Onboarding / Site Tour Styles */
+.onboarding-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.onboarding-card {
+  background: var(--white);
+  border: var(--border-width) solid var(--dark);
+  box-shadow: var(--neo-shadow);
+  border-radius: 16px;
+  padding: 1.75rem;
+  position: relative;
+  transition: var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.onboarding-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--neo-shadow-lg);
+}
+
+.onboarding-card:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--neo-shadow-sm);
+}
+
+.step-num {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary);
+  color: var(--white);
+  border: 2px solid var(--dark);
+  box-shadow: 2px 2px 0px var(--dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark);
+}
+
+.step-desc {
+  font-size: 0.95rem;
+  color: #4b5563;
+  font-weight: 700;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.step-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--secondary);
+  text-decoration: underline;
+  align-self: flex-start;
+}
+
+/* Tour Backdrop Overlay */
+.tour-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.75);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tour-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Spotlight Element Highlight Style */
+.tour-highlighted {
+  position: relative !important;
+  z-index: 9999 !important;
+  outline: 6px solid var(--accent) !important;
+  box-shadow: 0 0 35px rgba(0, 240, 181, 0.6) !important;
+  transition: all 0.3s ease !important;
+  pointer-events: auto !important;
+  background-color: var(--white) !important;
+}
+
+/* Tour Speech-Bubble Tooltip */
+.tour-tooltip {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%, 50px);
+  width: 90%;
+  max-width: 480px;
+  background: var(--white);
+  border: var(--border-width-lg) solid var(--dark);
+  box-shadow: var(--neo-shadow-lg);
+  border-radius: 20px;
+  padding: 1.75rem;
+  z-index: 10000;
+  direction: rtl;
+  text-align: right;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.tour-tooltip.active {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+.tour-tooltip-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tour-tooltip-body {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.tour-tooltip-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tour-btn-close {
+  background: var(--white);
+  border: 2px solid var(--dark);
+  width: 32px;
+  height: 32px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--dark);
+  box-shadow: 2px 2px 0px var(--dark);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tour-btn-close:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0px var(--dark);
+}
+
+
 
 
 

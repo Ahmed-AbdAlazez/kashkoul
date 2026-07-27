@@ -49,17 +49,75 @@
             كل اللي هتحتاجه عشان تبدأ سنتك صح في صندوق واحد مصمم خصيصاً لأبطال الثانوية العامة! كشاكيل خامة، أقلام تفتح
             النفس، وأدوات تنظيم عشان تفضل مركز طول السنة.
           </p>
-          <a href="#packages-section" class="neo-btn" id="cta-hero">
-            <span>اطلب دلوقتي</span>
-            <!-- Arrow left SVG for RTL Arabic direction -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"></line>
-              <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-          </a>
+          <div class="hero-actions" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-start; margin-top: 1rem;">
+            <a href="#packages-section" class="neo-btn" id="cta-hero">
+              <span>اطلب دلوقتي</span>
+              <!-- Arrow left SVG for RTL Arabic direction -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </a>
+            <button id="hero-tour-btn" class="neo-btn neo-btn-accent" style="font-size: 1.15rem; padding: 0.85rem 2rem;">
+              <span>🧭 جولة تفاعلية بالموقع</span>
+            </button>
+          </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- 1.5. Onboarding / Guide Section -->
+    <section class="onboarding-section section-padding" id="guide-section" style="background-color: var(--white); border-bottom: var(--border-width) solid var(--dark); padding-top: 3.5rem; padding-bottom: 4rem;">
+      <div class="container">
+        <div class="section-title-wrapper" style="text-align: center; margin-bottom: 3.5rem;">
+          <div class="sticker-badge" style="background-color: var(--accent); color: var(--dark); margin-bottom: 1.25rem;">دليلك السريع 🧭</div>
+          <h2 class="section-title" style="transform: rotate(0.5deg); display: inline-block;">إزاي تختار وتطلب من كشكول؟ ⚡</h2>
+          <p style="font-weight: 700; color: #4b5563; margin-top: 1.25rem; font-size: 1.15rem;">اضغط على أي خطوة للاستكشاف أو ابدأ الجولة التفاعلية الكاملة</p>
+        </div>
+
+        <!-- Onboarding Steps Grid -->
+        <div class="onboarding-grid">
+          <!-- Step 1 -->
+          <div class="onboarding-card reveal" data-step="1">
+            <div class="step-num">1</div>
+            <h3 class="step-title">اختر البوكس المناسب 📦</h3>
+            <p class="step-desc">تصفح باقات كشكول للثانوية العامة أو الباكالوريا بخصم 20%، أو اختر بوكس المستلزمات والأدوات.</p>
+            <span class="step-link">وريني فين ←</span>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="onboarding-card reveal" data-step="2" style="transition-delay: 0.05s;">
+            <div class="step-num" style="background-color: var(--accent);">2</div>
+            <h3 class="step-title">عاين الورق والكشكول 📖</h3>
+            <p class="step-desc">اضغط على زرار المعاينة وشوف الكشكول وتصميمه الداخلي والخارجي كأنك ماسكه بإيدك بالظبط.</p>
+            <span class="step-link">وريني فين ←</span>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="onboarding-card reveal" data-step="3" style="transition-delay: 0.1s;">
+            <div class="step-num" style="background-color: var(--yellow);">3</div>
+            <h3 class="step-title">كشاكيل مخصصة وفردية 🎨</h3>
+            <p class="step-desc">اطلب كشكول أي مادة لوحده بخصم 20%، أو ابعت لنا تصميمك الخاص وهنطبعهولك بجودة عالية.</p>
+            <span class="step-link">وريني فين ←</span>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="onboarding-card reveal" data-step="4" style="transition-delay: 0.15s;">
+            <div class="step-num" style="background-color: var(--primary-light);">4</div>
+            <h3 class="step-title">اطلب واتساب في ثواني 💬</h3>
+            <p class="step-desc">بضغطة زرار واحدة هيفتحلك شات مباشر لتأكيد طلبك وتوصيله ليك لحد باب البيت في 48 ساعة.</p>
+            <span class="step-link">وريني فين ←</span>
+          </div>
+        </div>
+
+        <!-- Tour Button Wrapper -->
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <button id="start-tour-btn" class="neo-btn neo-btn-accent" style="padding: 0.85rem 2.25rem; font-weight: 800; font-size: 1.25rem; gap: 0.75rem;">
+            <span>🧭 ابدأ الجولة التفاعلية الكاملة</span>
+          </button>
+        </div>
       </div>
     </section>
 
